@@ -3,6 +3,7 @@
   <h1 align="center">IPTV-API</h1>
 </div>
 
+<div align="center">小白学习，研究探讨，来自网络，折腾鼓捣，源供自用，勿卖勿盗，若有侵权，留言删掉！向大神学习！！致敬！！！
 <div align="center">自定义频道，自动获取直播源接口，测速验效后生成可用的结果</div>
 <div align="center">默认结果包含：📺央视频道、💰央视付费频道、📡卫视频道、🏠广东频道、🌊港·澳·台频道、🎬电影频道、🎥咪咕直播、🏀体育频道、🪁动画频道、🎮游戏频道、🎵音乐频道、🏛经典剧场</div>
 
@@ -111,11 +112,11 @@
 - 接口源：
 
 ```bash
-https://ghproxy.1888866.xyz/raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/output/result.m3u
 ```
 
 ```bash
-https://ghproxy.1888866.xyz/raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
+https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/output/result.txt
 ```
 
 或
@@ -131,7 +132,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
 - 数据源：
 
 ```bash
-https://ghproxy.1888866.xyz/raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
+https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/source.json
 ```
 
 或
