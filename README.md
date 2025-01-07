@@ -3,7 +3,7 @@
   <h1 align="center">IPTV-API</h1>
 </div>
 
-<div align="center">小白学习，研究探讨，来自网络，折腾鼓捣，源供自用，勿卖勿盗，若有侵权，留言删掉！致敬！</div>
+<div align="center">小白学习，研究探讨，来自网络，折腾鼓捣，源供自用，勿卖勿盗，若有侵权，留言删掉！向大神致敬！</div>
 <div align="center">生成结果文件内本无output文件，设定好config/config.ini运行成功后会自动生成。</div>
 <div align="center">自定义频道，自动获取直播源接口，测速验效后生成可用的结果</div>
 <div align="center">默认结果包含：📺央视频道、📡卫视频道、🌊港·澳·台频道、🎬电影频道、🎵音乐频道、🏛经典剧场等，可自行设定</div>
