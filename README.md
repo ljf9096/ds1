@@ -111,11 +111,11 @@
 - 接口源：
 
 ```bash
-https://ghproxy.1888866.xyz/raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.m3u
+https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/output/result.m3u
 ```
 
 ```bash
-https://ghproxy.1888866.xyz/raw.githubusercontent.com/Guovin/iptv-api/gd/output/result.txt
+https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/output/result.txt
 ```
 
 或
@@ -131,7 +131,7 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
 - 数据源：
 
 ```bash
-https://ghproxy.1888866.xyz/raw.githubusercontent.com/Guovin/iptv-api/gd/source.json
+https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/source.json
 ```
 
 或
@@ -274,7 +274,6 @@ docker run -d -p 8000:8000 guovern/iptv-api:lite
 以宿主机路径/etc/docker 为例：
 
 - iptv-api：
-
 ```bash
 docker run -v /etc/docker/config:/iptv-api/config -v /etc/docker/output:/iptv-api/output -d -p 8000:8000 guovern/iptv-api
 ```
