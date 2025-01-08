@@ -71,11 +71,19 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
 | open_driver            | 开启浏览器运行，若更新无数据可开启此模式，较消耗性能
 
 | False             |
-| open_empty_category    | 开启无结果频道分类，自动归类至底部 
+| open_empty_category    | 开启无结果频道分类，自动归类至底部
 
-| False             |
-| open_filter_resolution | 开启分辨率过滤，低于最小分辨率（min_resolution）的接口将会被过滤，GUI用户需要手动安装FFmpeg，程序会自动调用FFmpeg获取接口分辨率，推荐开启，虽然会增加测速阶段耗时，但能更有效地区分是否可播放的接口                                      | True              |
-| open_filter_speed      | 开启速率过滤，低于最小速率（min_speed）的接口将会被过滤                                                                                                                      | True              |
+
+| False             
+|
+| open_filter_resolution | 开启分辨率过滤，低于最小分辨率（min_resolution）的接口将会被过滤，GUI用户需要手动安装FFmpeg，程序会自动调用FFmpeg获取接口分辨率，推荐开启，虽然会增加测速阶段耗时，但能更有效地区分是否可播放的接口
+| True              
+|
+| open_filter_speed      | 开启速率过滤，低于最小速率（min_speed）的接口将会被过滤
+
+
+| True              
+|
 | open_hotel             | 开启酒店源功能，关闭后所有酒店源工作模式都将关闭                                                                                                                              | True              |
 | open_hotel_foodie      | 开启 Foodie 酒店源工作模式                                                                                                                                     | True              |
 | open_hotel_fofa        | 开启 FOFA、ZoomEye 酒店源工作模式                                                                                                                               | True              |
@@ -119,75 +127,112 @@ https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
 | source_file            | 模板文件路径                                                                                                                                                | config/demo.txt   |
 | subscribe_num          | 结果中偏好的订阅源接口数量                                                                                                                                         | 10                |
 | urls_limit             | 单个频道接口数量                                                                                                                                              | 10                |
-## 快速上手
+
+### 快速上手
+
 ### 工作流
-Fork 本项目并开启工作流更新，具体步骤请见[详细教程](./docs/tutorial.md)
+
+Fork 本项目并开启工作流更新，具体步骤请见[详细教程](./docs/tutorial.md）
+
 ### 命令行
+
 ```shell
 pip install pipenv
 ```
+
 ```shell
 pipenv install --dev
 ```
+
 启动更新：
+
 ```shell
 pipenv run dev
 ```
+
 启动服务：
+
 ```shell
 pipenv run service
 ```
+
 ### GUI 软件
+
 1. 下载[IPTV-API 软件地址](https://github.com/Guovin/iptv-api/releases)，此软件用于W10，W7用iptv-update-too。
+   
 2. 或者在项目目录下运行以下命令，即可打开 GUI 软件：
+   
 ```shell
 pipenv run ui
 ```
+
 <img src="./docs/images/ui.png" alt="IPTV-API更新软件" title="IPTV-API更新软件" style="height:600px" />
+
 ### Docker
+
 - iptv-api（完整版本）：性能要求较高，更新速度较慢，稳定性、成功率高；修改配置 open_driver = False 可切换到 Lite
   版本运行模式（推荐酒店源、组播源、关键字搜索使用此版本）
 - iptv-api:lite（精简版本）：轻量级，性能要求低，更新速度快，稳定性不确定（推荐订阅源使用此版本）
+  
 1. 拉取镜像：
+
 - iptv-api：
+  
 ```bash
 docker pull guovern/iptv-api:latest
 ```
+
 - iptv-api:lite：
+  
 ```bash
 docker pull guovern/iptv-api:lite
 ```
+
 2. 运行容器：
+
 - iptv-api：
 ```bash
 docker run -d -p 8000:8000 guovern/iptv-api
 ```
+
 - iptv-api:lite：
 ```bash
 docker run -d -p 8000:8000 guovern/iptv-api:lite
 ```
+
 卷挂载参数（可选）：
 实现宿主机文件与容器文件同步，修改模板、配置、获取更新结果文件可直接在宿主机文件夹下操作
 以宿主机路径/etc/docker 为例：
+
 - iptv-api：
+- 
 ```bash
 docker run -v /etc/docker/config:/iptv-api/config -v /etc/docker/output:/iptv-api/output -d -p 8000:8000 guovern/iptv-api
 ```
+
 - iptv-api:lite：
+- 
 ```bash
 docker run -v /etc/docker/config:/iptv-api-lite/config -v /etc/docker/output:/iptv-api-lite/output -d -p 8000:8000 guovern/iptv-api:lite
 ```
+
 端口环境变量：
+
 ```bash
 -e APP_PORT=8000
 ```
+
 3. 更新结果：
 - 接口地址：ip:8000
 - M3u 接口：ip:8000/m3u
 - Txt 接口：ip:8000/txt
 - 接口内容：ip:8000/content
 - 测速日志：ip:8000/log
+- 
 ## 免责声明
+
 本项目仅供学习交流用途，接口数据均来源于网络，如有侵权，请联系删除
+
 ## 许可证
+
 [MIT](./LICENSE) License &copy; 2024-PRESENT [Govin](https://github.com/guovin)
