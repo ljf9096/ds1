@@ -163,7 +163,6 @@ pipenv run ui
 1. 拉取镜像：
 
 - iptv-api：
-  
 ```bash
 docker pull guovern/iptv-api:latest
 ```
