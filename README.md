@@ -2,7 +2,7 @@
   <img src="./static/images/logo.png" alt="logo"/>
   <h1 align="center">IPTV-API</h1>
 </div>
-<div align="center">1、界面是在电脑win下运行，手机平板界面与此不同。2、因网站在境外，有可能打不开，可在网址前加kk。3、打开别人源代码，点击Forkw，此源代码就会自动粘贴到自己仓库下，文件名随便写。4、由于Fork下Actions 工作流默认关闭，需手动开启，第一次进入Actions，点击，若有工作流就会出现I understand my w0rkflows……点击，就会在Actions下生成All workflows下update schedule，点击右侧Run workflow下Run workflow确认运行。5、第二次之后操作，直接点出Actions下update schedule，右侧Run workflow下Run workflow，因反应慢，需刷新。6、配置：config 文件夹内 demo.txt 是频道（📺央视频道、📡卫视频道、🌊港·澳·台频道、🎬电影频道等）。config 文件夹内的 config.ini 有生成结果路径，生成结果文件内本无output文件，设定好后，运行config/config.ini，成功后会自动生成；config/rtp目录下有组播数据地区_运营商.txt；首次工作流是手动触发，后续执行（默认北京时间每日6:00 与 18:00）将自动触发，如果想每2天执行更新可在github/workflows/main.yml下修改：- cron: '0 22 */2 * *'- cron: '0 10 */2 * *。</div>
+<div align="center">1、界面是在电脑win下运行，手机平板界面与此不同。2、因网站在境外，有可能打不开，可在网址前加kk。3、打开别人源代码，点击Forkw，此源代码就会自动粘贴到自己仓库下，文件名会自动形成也可修改。4、由于Fork下Actions 工作流默认关闭，需手动开启，第一次进入Actions，点击，若有工作流就会出现I understand my w0rkflows……点击，就会在Actions下生成All workflows下update schedule，点击右侧Run workflow下Run workflow确认运行。5、第二次之后操作，直接点出Actions下update schedule，右侧Run workflow下Run workflow，因反应慢，需刷新。6、配置：config 文件夹内 demo.txt 是频道（📺央视频道、📡卫视频道、🌊港·澳·台频道、🎬电影频道等）。config 文件夹内的 config.ini 有生成结果路径，生成结果文件内本无output文件，设定好后，运行config/config.ini，成功后会自动生成；config/rtp目录下有组播数据地区_运营商.txt；首次工作流是手动触发，后续执行（默认北京时间每日6:00 与 18:00）将自动触发，如果想每2天执行更新可在github/workflows/main.yml下修改：- cron: '0 22 */2 * *'- cron: '0 10 */2 * *。</div>
 
 - [🔗 最新结果](#最新结果)
 - [⚙️ 配置参数](#配置)
