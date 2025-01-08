@@ -205,7 +205,6 @@ docker run -d -p 8000:8000 guovern/iptv-api:lite
 以宿主机路径/etc/docker 为例：
 
 - iptv-api：
-- 
 ```bash
 docker run -v /etc/docker/config:/iptv-api/config -v /etc/docker/output:/iptv-api/output -d -p 8000:8000 guovern/iptv-api
 ```
@@ -228,7 +227,6 @@ docker run -v /etc/docker/config:/iptv-api-lite/config -v /etc/docker/output:/ip
 - Txt 接口：ip:8000/txt
 - 接口内容：ip:8000/content
 - 测速日志：ip:8000/log
-- 
 ## 免责声明
 
 本项目仅供学习交流用途，接口数据均来源于网络，如有侵权，请联系删除
