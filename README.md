@@ -3,6 +3,7 @@
   <h1 align="center">IPTV-API</h1>
 </div>
 <div align="center">1、界面是在电脑win下运行，手机平板界面与此不同。2、因网站在境外，有可能打不开，可在网址前加kk。3、打开别人源代码，点击Forkw，此源代码就会自动粘贴到自己仓库下，文件名随便写。4、由于Fork下Actions 工作流默认关闭，需手动开启，第一次进入Actions，下方有I understand my w0rkflows……点击，就会在Actions下生成All workflows下update schedule，点击右侧Run workflow下Run workflow确认运行。5、第二次之后操作，直接点出Actions下update schedule，右侧Run workflow下Run workflow，因反应慢，需刷新。6、配置：config 文件夹内 demo.txt 是频道（📺央视频道、📡卫视频道、🌊港·澳·台频道、🎬电影频道等）。config 文件夹内的 config.ini 有生成结果路径，生成结果文件内本无output文件，设定好后，运行config/config.ini，成功后会自动生成；config/rtp目录下有组播数据地区_运营商.txt；首次工作流是手动触发，后续执行（默认北京时间每日6:00 与 18:00）将自动触发，如果想每2天执行更新可在github/workflows/main.yml下修改：- cron: '0 22 */2 * *'- cron: '0 10 */2 * *。</div>
+
 - [🔗 最新结果](#最新结果)
 - [⚙️ 配置参数](#配置)
 - [🚀 快速上手](#快速上手)
@@ -14,7 +15,9 @@
 - [🗓️ 更新日志](./CHANGELOG.md)
 - [📣 免责声明](#免责声明)
 - [⚖️ 许可证](#许可证)
+  
 ## 特点
+
 - ✅ 自定义模板，生成您想要的频道
 - ✅ 支持多种获取源方式：组播源、酒店源、订阅源、关键字搜索
 - ✅ 接口测速验效，获取延迟、速率、分辨率，过滤无效接口
@@ -22,34 +25,55 @@
 - ✅ 定时执行，北京时间每日 6:00 与 18:00 执行更新
 - ✅ 支持多种运行方式：工作流、命令行、GUI 软件、Docker(amd64/arm64/arm v7)
 - ✨ 更多功能请见[配置参数](#配置)
+  
 ## 最新结果
+
 - 接口源：
+  
 ```bash
 https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/output/result.m3u
 ```
+
 ```bash
 https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/output/result.txt
 ```
+
 或
+
 ```bash
 https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.m3u
 ```
+
 ```bash
 https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/output/result.txt
 ```
+
 - 数据源：
+  
 ```bash
 https://ghproxy.1888866.xyz/raw.github.com/Guovin/iptv-api/gd/source.json
 ```
+
 或
+
 ```bash
 https://cdn.jsdelivr.net/gh/Guovin/iptv-api@gd/source.json
 ```
+
 ## 配置
-| 配置项                    | 描述                                                                                                                                                    | 默认值               |
+
+| 配置项                    | 描述
+
+
+
+| 默认值               |
 |:-----------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------|
-| open_driver            | 开启浏览器运行，若更新无数据可开启此模式，较消耗性能                                                                                                                            | False             |
-| open_empty_category    | 开启无结果频道分类，自动归类至底部                                                                                                                                     | False             |
+| open_driver            | 开启浏览器运行，若更新无数据可开启此模式，较消耗性能
+
+| False             |
+| open_empty_category    | 开启无结果频道分类，自动归类至底部 
+
+| False             |
 | open_filter_resolution | 开启分辨率过滤，低于最小分辨率（min_resolution）的接口将会被过滤，GUI用户需要手动安装FFmpeg，程序会自动调用FFmpeg获取接口分辨率，推荐开启，虽然会增加测速阶段耗时，但能更有效地区分是否可播放的接口                                      | True              |
 | open_filter_speed      | 开启速率过滤，低于最小速率（min_speed）的接口将会被过滤                                                                                                                      | True              |
 | open_hotel             | 开启酒店源功能，关闭后所有酒店源工作模式都将关闭                                                                                                                              | True              |
