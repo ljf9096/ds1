@@ -1,4 +1,3 @@
-🕘️更新时间,#genre#
 央视频道,#genre#
 CCTV-1,http://221.224.4.170:1111/tsfile/live/0001_1.m3u8$订阅源-1920x1080
 CCTV-1,http://z.b.bkpcp.top/m.php?id=cctv1$订阅源-1920x1080
