@@ -27,7 +27,10 @@
 - ✨ 更多功能请见[配置参数](#配置)
   
 ## 最新结果
-
+https://kkgithub.com/extdomains/cdn.jsdelivr.net/gh/ljf9096/ds1/output/
+或https://ghproxy.net/https://raw.githubusercontent.com/ljf9096/ds1/master/output/
+或https://cdn.jsdelivr.net/gh/ljf9096/ds1@master/output/
+或https://ghproxy.1888866.xyz/raw.github.com/ljf9096/ds1/master/output/
 - 接口源：
   
 ```bash
