@@ -1,6 +1,6 @@
 
 央视频道,#genre#
-CCTV-1,http://z.b.bkpcp.top/m.php?id=cctv1$订阅源-1920x1080
+CCTV-1,http://z.b.bkpcp.top/m.php?id=cctv1$订阅源-192x108
 CCTV-1,http://221.226.4.10:9901/tsfile/live/0001_1.m3u8?key=txiptv&playlive=1&authid=0$订阅源-1920x1080
 CCTV-1,http://113.57.111.4:1111/tsfile/live/1000_1.m3u8$订阅源-1920x1080
 CCTV-1,http://112.74.115.68:35455/gaoma/cctv1.m3u8$订阅源-1920x1080
