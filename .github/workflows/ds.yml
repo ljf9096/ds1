@@ -1,39 +1,51 @@
-name: ds
+name: 手动触发直播源爬虫生成ds.txt
 
+# 触发条件：仅支持手动在GitHub页面触发
 on:
-  workflow_dispatch:  # 允许手动触发工作流
+  workflow_dispatch:
+    # 可选：手动触发时可配置参数（如调整每个频道保留数量，非必需）
     inputs:
-      reason:
-        description: '触发原因'
-        required: true
-        default: '手动生成ds.txt文件'
+      channel_limit:
+        description: '每个频道保留的链接数量（默认8）'
+        required: false
+        default: '8'
+        type: number
 
+# 执行任务
 jobs:
-  generate-ds:
+  run-spider:
+    # 运行环境：选择Ubuntu（轻量且稳定）
     runs-on: ubuntu-latest
     
     steps:
-    - name: 检出代码
-      uses: actions/checkout@v4
-      
-    - name: 设置Python环境
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-        
-    - name: 安装依赖
-      run: |
-        python -m pip install --upgrade pip
-        # 如果有依赖需要安装，可以在这里添加
-        # pip install -r requirements.txt
-        
-    - name: 运行生成脚本
-      run: python ds.py
-      
-    - name: 提交生成的文件
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add ds.txt
-        git commit -m "自动生成ds.txt文件" -a || echo "没有更改可提交"
-        git push
+      # 步骤1：拉取当前GitHub仓库代码（必须，才能获取ds.py）
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4  # 官方action，拉取代码到工作区
+
+      # 步骤2：配置Python环境（ds.py基于Python编写）
+      - name: 配置Python
+        uses: actions/setup-python@v5  # 官方action，安装指定Python版本
+        with:
+          python-version: '3.10'  # 选择兼容的Python版本（3.8+均可）
+          cache: 'pip'  # 缓存pip依赖，加速下次运行
+
+      # 步骤3：安装依赖（ds.py用到requests等库）
+      - name: 安装Python依赖
+        run: |
+          python -m pip install --upgrade pip  # 升级pip
+          pip install requests eventlet  # 安装脚本依赖的库（根据ds.py导入补充）
+
+      # 步骤4：执行ds.py爬虫脚本（核心步骤）
+      - name: 运行爬虫生成ds.txt
+        run: |
+          # 执行脚本，可传递手动输入的参数（若ds.py支持读取环境变量）
+          export CHANNEL_LIMIT=${{ github.event.inputs.channel_limit }}
+          python ds.py  # 直接运行脚本，生成ds.txt到工作区
+
+      # 步骤5：保存生成的ds.txt（上传为工作流产物，方便下载）
+      - name: 上传ds.txt产物
+        uses: actions/upload-artifact@v4  # 官方action，将文件作为产物保存
+        with:
+          name: ds-tv-source  # 产物包名称（下载时显示）
+          path: ./ds.txt       # ds.txt的路径（脚本执行后生成在工作区根目录）
+
