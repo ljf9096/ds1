@@ -2,7 +2,7 @@ name: itvlist
 
 on:
   schedule:
-    - cron: '0 22 * * *'
+    - cron: '0 12 * * 1'
     env:
       TZ: Asia/Shanghai #此为北京时间
   push:
