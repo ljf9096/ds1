@@ -26,7 +26,7 @@ jobs:
         run: pip install selenium requests futures eventlet
 
       - name: Run itv_all
-        run: python ${{ github.workspace }}/tvtest.py
+        run: python ${{ github.workspace }}/1.py
       
       - name: 提交更改
         run: |
