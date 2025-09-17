@@ -1,11 +1,11 @@
-name: tvlist
+name: itvlist
 
 on:
   schedule:
     - cron: '0 21 * * *'
-  push:
-    branches:
-      - main
+  #push:
+    #branches:
+      #- main
 
 jobs:
   build:
@@ -26,12 +26,12 @@ jobs:
         run: pip install selenium requests futures eventlet
 
       - name: Run itv_all
-        run: python ${{ github.workspace }}/ds.py
+        run: python ${{ github.workspace }}/new.py
       
       - name: 提交更改
         run: |
-          git config --local user.email "ssili@126.com"
-          git config --local user.name "ssili126"
+          git config --local user.email "ljf6666@163.com"
+          git config --local user.name "ljf6666"
           git add .
           git commit *.txt -m "Add generated file"
           #git commit *.m3u -m "Add generated file"
