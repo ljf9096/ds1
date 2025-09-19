@@ -1,4 +1,4 @@
-name: itvlist1
+name: itvlist
 
 on:
    workflow_dispatch:  # 允许手动触发
